@@ -18,7 +18,7 @@ public class Hand : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<animator>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -39,9 +39,9 @@ public class Hand : MonoBehaviour
 
     void AnimateHand()
     {
-        if(GripCurrent != gripTarget)
+        if(gripCurrent != gripTarget)
         {
-            GripCurrent = Mathf.MoveTowards(gripCurrent, gripTarget, Time.deltaTime * speed);
+            gripCurrent = Mathf.MoveTowards(gripCurrent, gripTarget, Time.deltaTime * speed);
             animator.SetFloat(animatorGripParam, gripCurrent);
         }
         if(triggerCurrent != triggerTarget)
